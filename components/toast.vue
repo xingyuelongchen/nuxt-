@@ -5,7 +5,7 @@ Create Time  : 2020-11-04
 -->
 <template>
   <transition name='toast'>
-    <div class="toast" v-if="visible">
+    <div class="toast" v-show="visible">
       <span> {{content}} </span>
     </div>
   </transition>
@@ -15,7 +15,7 @@ export default {
   name: 'toast',
   data() {
     return {
-      visible: true,
+      visible: false,
       content: '',
       duration: 3000,
     };

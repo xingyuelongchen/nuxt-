@@ -5,7 +5,7 @@ Create Time  : 2020-11-03
 -->
 <template>
   <div>
-    <button @click.stop="show = true">打开弹窗</button>
+    <button @click.stop="show = !show">{{show?'关闭弹窗':'打开弹窗'}}</button>
     <modelDialog :show="show" @cancel="cancel" @confirm="confirm" />
   </div>
 </template>

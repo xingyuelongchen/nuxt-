@@ -1,19 +1,19 @@
 import Vue from 'vue'
 import toast from './toast.vue';
 const ToastConstructor = Vue.extend(toast)
-let nId = 1
+let nodeId = 1
 
 const Notice = (content) => {
-    let id = 'toast-' + nId++;
+    let id = 'toast-' + nodeId++;
     const ToastInstance = new ToastConstructor({
-        data: { content: content || nId }
+        data: { content: content || nodeId }
     })
 
     ToastInstance.id = id 
     ToastInstance.vm = ToastInstance.$mount()  
     ToastInstance.dom = ToastInstance.vm.$el
     document.body.appendChild(ToastInstance.dom) 
-    ToastInstance.dom.style.zIndex = nId + 1001 // 后插入的Notice组件z-index加一，保证能盖在之前的上面
+    ToastInstance.dom.style.zIndex = nodeId + 100;
     ToastInstance.vm.visible = true;
     return ToastInstance.vm
 }
