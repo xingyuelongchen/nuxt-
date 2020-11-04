@@ -1,0 +1,11 @@
+{
+  "name": "my-app",
+  "scripts": {
+    "dev": "nuxt"
+  },
+  "dependencies": {
+    "less": "^3.12.2",
+    "less-loader": "^7.0.2",
+    "nuxt": "^2.14.7"
+  }
+}
